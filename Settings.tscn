@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://WindowWidth.gd" type="Script" id=1]
+[ext_resource path="res://Settings.gd" type="Script" id=2]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 101.0
+margin_bottom = 84.0
+text = "Input new window width:"
+
+[node name="LineEdit" type="LineEdit" parent="RichTextLabel"]
+margin_left = 4.0
+margin_top = 38.0
+margin_right = 89.0
+margin_bottom = 76.0
+editable = false
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 100.0
+margin_right = 152.0
+margin_bottom = 50.0
+text = "CLOSE"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 160.0
+margin_right = 212.0
+margin_bottom = 50.0
+text = "Color"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

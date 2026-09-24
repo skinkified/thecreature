@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Home_new.gd" type="Script" id=1]
+[ext_resource path="res://professorokabe.png" type="Texture" id=2]
+[ext_resource path="res://outline0.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Settings.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MyText.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="Home" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Professorokabe" type="Sprite" parent="."]
+position = Vector2( 160, 250 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 250.0
+margin_top = 130.0
+margin_right = 900.0
+margin_bottom = 480.0
+custom_colors/font_color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/normal = SubResource( 1 )
+wrap_enabled = true
+script = ExtResource( 5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 240.0
+margin_top = 261.0
+margin_right = 948.0
+margin_bottom = 595.0
+
+[node name="Settings" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="Settings/Button2" to="TextEdit" method="_on_Button2_pressed"]
+
+[editable path="Settings"]

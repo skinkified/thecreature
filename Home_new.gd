@@ -1,0 +1,37 @@
+extends Node2D
+
+onready var sprite = $Professorokabe
+onready var timer = $Timer
+onready var label = $RichTextLabel
+onready var settings = $Settings
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	get_tree().get_root().set_transparent_background(true)
+	OS.set_window_position(Vector2(0, 600))
+
+func _process(_delta):
+		pass
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+	if event.is_action_pressed("ui_toggle_front"):
+		OS.set_window_always_on_top(true)
+	if event.is_action_pressed("ui_toggle_back"):
+		OS.set_window_always_on_top(false)
+	if event.is_action_pressed("ui_settings"):
+		settings.set_visible(true)
+		settings.toggle_editable(true)
+		
+func _on_Timer_timeout():
+	sprite.position += Vector2(0, 30)
+
+func _on_TextEdit_text_changed():
+	if timer.is_stopped():
+		sprite.position -= Vector2(0, 30)
+		timer.start()
+	else:
+		sprite.position += Vector2(0, 30)
+		sprite.position -= Vector2(0, 30)
+		timer.start()
