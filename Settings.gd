@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var width = $RichTextLabel/LineEdit
+onready var width = $ColorRect/RichTextLabel/LineEdit
 signal width_changed(newWidth)
 
 func _ready():

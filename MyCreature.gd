@@ -2,7 +2,7 @@ extends Node2D
 
 onready var animPlayer = $AnimationPlayer
 onready var timer = $Timer
-onready var sprite = $Sprite
+onready var sprite = $SpriteWrapper/Sprite
 
 func _ready():
 	resize_sprite()

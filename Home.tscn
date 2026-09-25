@@ -35,6 +35,5 @@ margin_bottom = 595.0
 visible = false
 
 [connection signal="text_changed" from="TextEdit" to="MyCreature" method="_on_TextEdit_text_changed"]
-[connection signal="pressed" from="Settings/Color" to="TextEdit" method="_on_Color_pressed"]
 
 [editable path="Settings"]
