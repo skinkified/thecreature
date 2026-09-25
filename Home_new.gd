@@ -6,7 +6,8 @@ onready var settings = $Settings
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().get_root().set_transparent_background(true)
-	OS.set_window_position(Vector2(0, 600))
+	var screenSize = OS.get_screen_size()
+	OS.set_window_position(Vector2(0, screenSize.y-500))
 	
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):

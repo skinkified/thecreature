@@ -35,6 +35,7 @@ margin_bottom = 595.0
 visible = false
 
 [connection signal="text_changed" from="TextEdit" to="MyCreature" method="_on_TextEdit_text_changed"]
+[connection signal="width_changed" from="Settings" to="MyCreature" method="_on_Settings_width_changed"]
 [connection signal="buttons_done" from="Settings/ColorRect/SpriteList" to="MyCreature" method="_on_SpriteList_buttons_done"]
 
 [editable path="Settings"]
