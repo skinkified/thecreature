@@ -1,28 +1,34 @@
 extends RichTextLabel
 
+signal buttons_done(butonArr)
+
 var textureArr = []
+var buttonArr = []
+var buttonY = 30
 
 func _ready():
-	print("hello")
 	var dir = Directory.new()
 	if dir.open("user://sprites") == OK:
-		print("hi")
 		dir.list_dir_begin()
 		var fileName = dir.get_next()
 		while fileName != "":
-			print("owo")
 			if !dir.current_is_dir() and fileName.split(".")[-1] == "png":
-				print(fileName)
 				textureArr.append(fileName)
-		print(textureArr)
-	else:
-		print("An error occurred when trying to access the path.")
-#		var file_name = dir.get_next()
-#		while file_name != "":
-#			if dir.current_is_dir():
-#				print("Found directory: " + file_name)
-#			else:
-#				print("Found file: " + file_name)
-#			file_name = dir.get_next()
-#	else:
-#		print("An error occurred when trying to access the path.")
+			fileName = dir.get_next()
+		make_buttons()
+		emit_signal("buttons_done", buttonArr)
+
+func make_buttons():
+	for tex in textureArr:
+		var newButton = load("res://SpriteButton.tscn")
+		newButton = newButton.instance()
+		newButton.text = tex.split("/")[-1]
+		newButton.rect_position.y = buttonY
+		buttonY += 20
+		var texture = ImageTexture.new()
+		var image = Image.new()
+		image.load("user://sprites/" + tex)
+		texture.create_from_image(image)
+		newButton.spritePath = texture
+		add_child(newButton)
+		buttonArr.append(newButton)

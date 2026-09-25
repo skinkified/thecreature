@@ -21,10 +21,10 @@ margin_bottom = 91.0
 text = "Input new window width:"
 
 [node name="LineEdit" type="LineEdit" parent="ColorRect/RichTextLabel"]
-margin_left = 4.0
-margin_top = 38.0
-margin_right = 89.0
-margin_bottom = 76.0
+margin_left = 10.0
+margin_top = 40.0
+margin_right = 80.0
+margin_bottom = 70.0
 editable = false
 script = ExtResource( 1 )
 
@@ -45,8 +45,8 @@ text = "Color"
 [node name="SpriteList" type="RichTextLabel" parent="ColorRect"]
 margin_left = 7.0
 margin_top = 93.0
-margin_right = 85.0
-margin_bottom = 133.0
+margin_right = 205.0
+margin_bottom = 450.0
 text = "Choose sprite:"
 script = ExtResource( 3 )
 

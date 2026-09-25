@@ -22,3 +22,12 @@ func _on_TextEdit_text_changed():
 		animPlayer.play("RESET")
 		animPlayer.play("squish")
 		timer.start()
+
+func _on_SpriteList_buttons_done(buttonArr):
+	for button in buttonArr:
+		button.connect("pressed_with_sprite", self, "_on_button_with_sprite")
+
+func _on_button_with_sprite(mySprite):
+	if mySprite != null:
+		sprite.texture = mySprite
+	resize_sprite()
