@@ -28,6 +28,20 @@ margin_bottom = 70.0
 editable = false
 script = ExtResource( 1 )
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
+margin_left = 108.0
+margin_top = 68.0
+margin_right = 219.0
+margin_bottom = 194.0
+text = "Input new creature height:"
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/RichTextLabel2"]
+margin_left = 17.0
+margin_top = 46.0
+margin_right = 87.0
+margin_bottom = 77.0
+editable = false
+
 [node name="Close" type="Button" parent="ColorRect"]
 margin_left = 160.0
 margin_top = 10.0
@@ -45,7 +59,7 @@ text = "Color"
 [node name="SpriteList" type="RichTextLabel" parent="ColorRect"]
 margin_left = 7.0
 margin_top = 93.0
-margin_right = 205.0
+margin_right = 119.0
 margin_bottom = 450.0
 text = "Choose sprite:"
 script = ExtResource( 3 )
