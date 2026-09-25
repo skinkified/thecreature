@@ -1,8 +1,8 @@
 extends TextEdit
 
 onready var width = $"../Settings"
-onready var outline0 = load("res://outline0.tres")
-onready var outline1 = load("res://outline1.tres")
+onready var outline0 = load("res://roboto0.tres")
+onready var outline1 = load("res://roboto1.tres")
 var dark = Color("#131313")
 var light = Color("#ffffff")
 var mode = 0
@@ -13,8 +13,7 @@ func _ready():
 func _on_width_changed(newWidth):
 	rect_size.x = newWidth - 250
 
-
-func _on_Button2_pressed():
+func _on_Color_pressed():
 	if mode == 0:
 		set_deferred("custom_colors/font_color", light)
 		set_deferred("custom_fonts/font", outline1)
