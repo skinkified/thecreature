@@ -3,6 +3,7 @@ extends Node2D
 onready var animPlayer = $AnimationPlayer
 onready var timer = $Timer
 onready var timer2 = $Timer2
+onready var spriteWrapper = $SpriteWrapper
 onready var sprite = $SpriteWrapper/Sprite
 var myShape = PoolVector2Array()
 var myHeight = 500
@@ -30,7 +31,8 @@ func resize_sprite(newHeight):
 		myShape.push_back(Vector2(900, 130))#toprightbox
 		myShape.push_back(Vector2(sprite_size.x*sprite.scale.x, 130))#connection
 		myShape.push_back(Vector2(sprite_size.x*sprite.scale.x, 0))#toprightcreature
-		sprite.global_position = Vector2(sprite_size.x*sprite.scale.x*.5, myHeight*.5)
+		spriteWrapper.rest_position = Vector2(sprite_size.x*sprite.scale.x*.5, myHeight*.5)
+		sprite.position = Vector2.ZERO
 		OS.set_window_mouse_passthrough(myShape)
 
 func _input(event):
