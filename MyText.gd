@@ -1,8 +1,8 @@
 extends TextEdit
 
 onready var width = $"../Settings"
-onready var outline0 = load("res://roboto0.tres")
-onready var outline1 = load("res://roboto1.tres")
+onready var outline0 = load("res://mplus0.tres")
+onready var outline1 = load("res://mplus1.tres")
 var dark = Color("#131313")
 var light = Color("#ffffff")
 var mode = 0
