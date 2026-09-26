@@ -12,7 +12,23 @@ func _ready():
 		dir.list_dir_begin()
 		var fileName = dir.get_next()
 		while fileName != "":
-			if !dir.current_is_dir() and fileName.split(".")[-1] == "png":
+			#handle animation folders
+			if dir.current_is_dir():
+				var newDir = Directory.new()
+				if newDir.open("user://sprites/" + fileName) == OK:
+					var newFileName = newDir.list_dir_begin()
+					newFileName = newDir.get_next()
+					var myAnim = [fileName]
+					var i = 0
+					while newFileName != "":
+						if newFileName == str(i) + ".png":
+							myAnim.append(newFileName)
+							i += 1
+						newFileName = newDir.get_next()
+					if myAnim.size() == 4:
+						textureArr.append(myAnim)
+			#handle single sprites
+			elif fileName.split(".")[-1] == "png":
 				textureArr.append(fileName)
 			fileName = dir.get_next()
 		make_buttons()
@@ -22,13 +38,34 @@ func make_buttons():
 	for tex in textureArr:
 		var newButton = load("res://SpriteButton.tscn")
 		newButton = newButton.instance()
-		newButton.text = tex.split("/")[-1].split(".")[0]
 		newButton.rect_position.y = buttonY
 		buttonY += 30
-		var texture = ImageTexture.new()
-		var image = Image.new()
-		image.load("user://sprites/" + tex)
-		texture.create_from_image(image)
-		newButton.spritePath = texture
-		add_child(newButton)
-		buttonArr.append(newButton)
+		if tex is Array:
+			newButton.text = tex[0]
+			for i in range(1,4):
+				var texture = ImageTexture.new()
+				var image = Image.new()
+				print("user://sprites/" + tex[0] + "/" + tex[i])
+				print(i)
+				image.load("user://sprites/" + tex[0] + "/" + tex[i])
+				texture.create_from_image(image)
+				match i:
+					1:
+						newButton.spritePath0 = texture
+					2:
+						newButton.spritePath1 = texture
+					3:
+						newButton.spritePath2 = texture
+			add_child(newButton)
+			buttonArr.append(newButton)
+		else:
+			newButton.text = tex.split("/")[-1].split(".")[0]
+			var texture = ImageTexture.new()
+			var image = Image.new()
+			image.load("user://sprites/" + tex)
+			texture.create_from_image(image)
+			newButton.spritePath0 = texture
+			newButton.spritePath1 = texture
+			newButton.spritePath2 = texture
+			add_child(newButton)
+			buttonArr.append(newButton)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://professorokabe.png" type="Texture" id=1]
+[ext_resource path="res://0.png" type="Texture" id=1]
 [ext_resource path="res://MyCreature.gd" type="Script" id=2]
 [ext_resource path="res://emptySprite.png" type="Texture" id=3]
 
@@ -127,3 +127,10 @@ anims/squish_old = SubResource( 3 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.17
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
