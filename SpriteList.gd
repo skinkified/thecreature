@@ -22,9 +22,9 @@ func make_buttons():
 	for tex in textureArr:
 		var newButton = load("res://SpriteButton.tscn")
 		newButton = newButton.instance()
-		newButton.text = tex.split("/")[-1]
+		newButton.text = tex.split("/")[-1].split(".")[0]
 		newButton.rect_position.y = buttonY
-		buttonY += 20
+		buttonY += 30
 		var texture = ImageTexture.new()
 		var image = Image.new()
 		image.load("user://sprites/" + tex)
