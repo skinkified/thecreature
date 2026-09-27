@@ -1,4 +1,4 @@
-# thecreature
+# THE CREATURE
 This is a program that puts The Creature on your computer
 
 The Creature is whatever you want it to be in your beautiful mind
@@ -44,6 +44,7 @@ To add an animated Creature, add a new folder to sprites, with three pngs named 
 
 The name of the single .png or folder will be the name that shows up in settings
 
+# I USED THINGS
 MADE IN GODOT: https://godotengine.org/license/
 
 ROBOTO AND M1PLUS ARE LICENSED UNDER OFL: https://openfontlicense.org/
