@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var width = $ColorRect/RichTextLabel/LineEdit
+onready var height = $ColorRect/RichTextLabel2/LineEdit
 signal width_changed(newWidth)
 
 func _ready():
@@ -8,6 +9,7 @@ func _ready():
 
 func toggle_editable(myBool):
 	width.editable = myBool
+	height.editable = myBool
 
 func _on_enter_pressed():
 	if width.get_text().is_valid_integer():

@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var label = $RichTextLabel
 onready var settings = $Settings
+onready var height = $Settings/ColorRect/RichTextLabel2/LineEdit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

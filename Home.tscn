@@ -36,6 +36,7 @@ visible = false
 
 [connection signal="text_changed" from="TextEdit" to="MyCreature" method="_on_TextEdit_text_changed"]
 [connection signal="width_changed" from="Settings" to="MyCreature" method="_on_Settings_width_changed"]
+[connection signal="enter_pressed" from="Settings/ColorRect/RichTextLabel2/LineEdit" to="MyCreature" method="_on_LineEdit_enter_pressed"]
 [connection signal="pressed" from="Settings/ColorRect/Color" to="TextEdit" method="_on_Color_pressed"]
 [connection signal="buttons_done" from="Settings/ColorRect/SpriteList" to="MyCreature" method="_on_SpriteList_buttons_done"]
 

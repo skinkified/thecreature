@@ -5,6 +5,8 @@ onready var timer = $Timer
 onready var timer2 = $Timer2
 onready var spriteWrapper = $SpriteWrapper
 onready var sprite = $SpriteWrapper/Sprite
+onready var heightGet = $"../Settings/ColorRect/RichTextLabel2/LineEdit"
+onready var text = $"../TextEdit"
 var myShape = PoolVector2Array()
 var myHeight = 500
 var del = false
@@ -24,12 +26,15 @@ func resize_sprite(newHeight):
 		myHeight = newHeight
 		var sprite_size = sprite.texture.get_size()
 		sprite.scale = Vector2(myHeight/sprite_size.y, myHeight/sprite_size.y)
+		var text_width = text.rect_size.x
+		text.margin_left = myHeight / 2
+		text.margin_right = text.margin_left + text_width
 		myShape = PoolVector2Array()
 		myShape.push_back(Vector2(0, 0))#topleft
 		myShape.push_back(Vector2(0, myHeight))#botleft
-		myShape.push_back(Vector2(900, myHeight))#botright
-		myShape.push_back(Vector2(900, 130))#toprightbox
-		myShape.push_back(Vector2(sprite_size.x*sprite.scale.x, 130))#connection
+		myShape.push_back(Vector2(text.margin_right, myHeight))#botright
+		myShape.push_back(Vector2(text.margin_right, text.margin_top))#toprightbox
+		myShape.push_back(Vector2(sprite_size.x*sprite.scale.x, text.margin_top))#connection
 		myShape.push_back(Vector2(sprite_size.x*sprite.scale.x, 0))#toprightcreature
 		spriteWrapper.rest_position = Vector2(sprite_size.x*sprite.scale.x*.5, myHeight*.5)
 		sprite.position = Vector2.ZERO
@@ -84,3 +89,12 @@ func _on_Settings_width_changed(newWidth):
 		myShape[2] = Vector2(900, myHeight)
 		myShape[3] = Vector2(900, 130)
 	OS.set_window_mouse_passthrough(myShape)
+
+
+func _on_LineEdit_enter_pressed():
+	if heightGet.get_text().is_valid_integer():
+		var newHeight = int(heightGet.get_text())
+		if newHeight >= 300 and newHeight <= 600:
+			myHeight = newHeight
+			resize_sprite(myHeight)
+			OS.set_window_position(Vector2(0, OS.get_screen_size().y-myHeight))

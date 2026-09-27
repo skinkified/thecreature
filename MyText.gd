@@ -11,7 +11,7 @@ func _ready():
 	width.connect("width_changed", self, "_on_width_changed")
 
 func _on_width_changed(newWidth):
-	rect_size.x = newWidth - 250
+	rect_size.x = newWidth - margin_left
 
 func _on_Color_pressed():
 	if mode == 0:
