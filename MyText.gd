@@ -3,7 +3,7 @@ extends TextEdit
 onready var width = $"../Settings"
 onready var outline0 = load("res://mplus0.tres")
 onready var outline1 = load("res://mplus1.tres")
-var dark = Color("#131313")
+var dark = Color("#000000")
 var light = Color("#ffffff")
 var mode = 0
 
