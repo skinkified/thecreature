@@ -6,17 +6,17 @@ The Creature is whatever you want it to be in your beautiful mind
 # TO DOWNLOAD:
 Windows:
 
-  Download thecreature.exe
+- Download thecreature.exe
   
 Linux:
 
-  Download thecreature.x86_64
+- Download thecreature.x86_64
   
-  Run chmod a+x
+- Run chmod a+x
   
 MacOS:
 
-  Lol lmao. sorry maybe later
+- Lol lmao. sorry maybe later
 
 # TO COMPILE:
 Download Godot version 3.5.x (latest 3.x also probably works). Follow normal Godot exporting instructions :>
@@ -54,3 +54,4 @@ The name of the single .png or folder will be the name that shows up in settings
 MADE IN GODOT: https://godotengine.org/license/
 
 ROBOTO AND M1PLUS ARE LICENSED UNDER OFL: https://openfontlicense.org/
+
