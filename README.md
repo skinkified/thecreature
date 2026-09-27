@@ -56,3 +56,5 @@ MADE IN GODOT: https://godotengine.org/license/
 
 ROBOTO AND M1PLUS ARE LICENSED UNDER OFL: https://openfontlicense.org/
 
+# (personal note)
+this is just a program i made for fun so im probably not gonna take any suggestions about it unless youre literally my friend lol. its just my bug. my creature, even
