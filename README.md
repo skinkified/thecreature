@@ -34,7 +34,7 @@ ESC to end process
 Click The Creature and type for fun
 
 # SETTINGS
-Change character height doesn't do anything yet lol. rest are pretty self explanatory
+Width is limited between 250 and 900, height between 300 and 600 (inclusive).
 
 # ADDING SPRITES
 Go to the appropriate file path for your OS
