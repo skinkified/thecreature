@@ -27,7 +27,9 @@ CTRL + F to force The Creature to be the front window
 
 CTRL + B to return The Creature to a normal window state
 
-ESC to open the settings
+RIGHT CLICK to open the settings
+
+ESC to end process
 
 Click The Creature and type for fun
 
