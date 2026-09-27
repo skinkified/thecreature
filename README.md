@@ -4,6 +4,7 @@ This is a program that puts The Creature on your computer
 The Creature is whatever you want it to be in your beautiful mind
 
 # TO DOWNLOAD:
+Go to the executables folder, then
 Windows:
 
 - Download thecreature.exe
@@ -26,7 +27,9 @@ CTRL + F to force The Creature to be the front window
 
 CTRL + B to return The Creature to a normal window state
 
-ESC to open the settings
+RIGHT CLICK to open the settings
+
+ESC to end process
 
 Click The Creature and type for fun
 
@@ -55,3 +58,5 @@ MADE IN GODOT: https://godotengine.org/license/
 
 ROBOTO AND M1PLUS ARE LICENSED UNDER OFL: https://openfontlicense.org/
 
+# (personal note)
+this is just a program i made for fun so im probably not gonna take any suggestions about it unless youre literally my friend lol. its just my bug. my creature, even
