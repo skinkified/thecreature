@@ -106,6 +106,7 @@ tracks/1/keys = {
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -90.0
 margin_top = -52.0
 margin_right = 1019.0
