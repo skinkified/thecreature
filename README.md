@@ -5,11 +5,17 @@ The Creature is whatever you want it to be in your beautiful mind
 
 # TO DOWNLOAD:
 Windows:
+
   Download thecreature.exe
+  
 Linux:
+
   Download thecreature.x86_64
+  
   Run chmod a+x
+  
 MacOS:
+
   Lol lmao. sorry maybe later
 
 # TO COMPILE:
