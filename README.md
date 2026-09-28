@@ -17,7 +17,11 @@ Linux:
   
 MacOS:
 
-- Lol lmao. sorry maybe later
+- Download thecreature.zip
+
+- Unzip
+
+- Hopefully it works I've not had any mac users :>
 
 # TO COMPILE:
 Download Godot version 3.5.x (latest 3.x also probably works). Follow normal Godot exporting instructions :>
